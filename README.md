@@ -6,3 +6,4 @@ dec 16- adding colors and new changes to Lilwayne.html
 i added background colors and fonts but gonna stop there and work on the info then the styles
 taking it day by day 
 
+Jan 28 2026- added pterodactyl page adding div color and inforimation about pteros
