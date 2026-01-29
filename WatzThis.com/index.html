@@ -1,0 +1,93 @@
+<!DOCTYPE html>  
+<html> 
+<head>    
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">        
+<title>WatzThis?.com Documentation</title>  
+
+<script> 
+var light = new Array(); 
+var t; 
+var color=0; 
+var flipping=0; 
+var speed;  
+light[0] = 'black'; 
+light[1] = 'white'; 
+light[2] = "red"; 
+light[3] = "blue"; 
+light[4] = "green"; 
+light[5] = "orange";  
+function flip(whichway){   
+   document.body.style.backgroundColor = light[whichway];   
+   stopFlip(); 
+}      
+function autoFlip() { 
+   document.body.style.backgroundColor = light[color];
+   if (color < light.length-1) {         
+     color++;     
+   } else {         
+     color=0;     
+   }     
+t = setTimeout("autoFlip()",speed); 
+} 
+function doAutoFlip(changespeed){     
+ if (!flipping){         
+   flipping=1;   
+   speed=changespeed;      
+   autoFlip();     
+ }    
+} 
+function stopFlip() {     
+ clearTimeout(t);     
+ flipping=0; 
+} 
+</script>    
+</head>  
+<body>   
+  <header>
+    <h1>How to use WatzThis</h1>   
+  </header>
+  <section>
+    <h2>Chapter : The Buttons</h2>
+    <p>WatzThis has several buttons. Each has a different function. 
+      The following figure shows the buttons.</p>
+  
+  <figure>
+     <img src="https://www.watzthis.com/images/buttons.png" alt="Here are the buttons">
+      <figcaption>You can see the buttons here.</figcaption>
+  </figure> 
+  </section>
+  <section>
+    <h2>Chapter 2: The Lights</h2>
+    <p>
+      WatzThis has colors. They change wwhen you press different buttons.
+    </p>
+  </section>
+  <section>
+   <h2>
+    Chapter 3: "Auto" Mode
+   </h2>
+   <p>
+    WatzThis has an auomatic mode. Press the "AUTO" button to start it. The colors will
+    change every half second. To stop it, press the "STOP" button.
+   </p> 
+  </section>
+  <footer>
+    <p>
+      created by WatzThis Enterprises &copy; 2026
+    </p>
+  </footer>
+<div id="container"> 
+
+<div id="flashlight">
+<input type="button" id="OFF" class="bigButton" value="OFF" onclick="flip(0);"> 
+<input type="button" id="ON" class="bigButton" value="ON" onclick="flip(1);"> 
+<input type="button" id="RED" class="bigButton" value="RED" onclick="flip(2);">     
+</div> 
+<div id="danceparty"> 
+<input type="button" id="AUTO" class="bigButton" value="AUTO" onclick="doAutoFlip(500);"> 
+<input type="button" id="STOP" class="bigButton" value="STOP" onclick="stopFlip();"> 
+</div>     
+</div>
+</body> 
+</html> 
