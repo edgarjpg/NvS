@@ -1,0 +1,14 @@
+<!HTML>
+<script>
+var gps = navigator.geolocation.getCurrentPosition(
+    
+function (position) {  
+    for (key in position.coords) {
+        document.write(key+': '+ position.coords[key]);
+        document.write ('<br>');
+        }
+    }
+                                                   
+                                                   );
+</script>
+<HTML>
